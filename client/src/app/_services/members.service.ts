@@ -16,7 +16,6 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers() {
-    //return this.http.get<Member[]>(this.baseUrl + 'users');
     if (this.members.length > 0 ) return of(this.members);
     return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
       map(members => {
@@ -33,7 +32,6 @@ export class MembersService {
   }
 
   updateMember(member: Member) {
-    //return this.http.put(this.baseUrl + 'users', member);
     return this.http.put(this.baseUrl + 'users', member).pipe(
       map(() => {
         const index = this.members.indexOf(member);
