@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using API.Data;
 using API.Interfaces;
-using API.Midddleware;
+using API.Middleware;
 using API.Services;
 using Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
