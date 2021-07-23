@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Data.Migrations
 {
-    public partial class ExtensionUserEntity : Migration
+    public partial class ExtendedUserEntity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -77,7 +77,7 @@ namespace API.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(type: "TEXT", nullable: true),
-                    isMain = table.Column<bool>(type: "INTEGER", nullable: false),
+                    IsMain = table.Column<bool>(type: "INTEGER", nullable: false),
                     PublicId = table.Column<string>(type: "TEXT", nullable: true),
                     AppUserId = table.Column<int>(type: "INTEGER", nullable: false)
                 },

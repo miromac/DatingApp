@@ -14,7 +14,7 @@ namespace API.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.0-rc.2.20475.6");
+                .HasAnnotation("ProductVersion", "5.0.0-preview.8.20407.4");
 
             modelBuilder.Entity("API.Entities.AppUser", b =>
                 {
@@ -75,14 +75,14 @@ namespace API.Data.Migrations
                     b.Property<int>("AppUserId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("PublicId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("isMain")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -98,13 +98,6 @@ namespace API.Data.Migrations
                         .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("AppUser");
-                });
-
-            modelBuilder.Entity("API.Entities.AppUser", b =>
-                {
-                    b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618
         }
