@@ -30,8 +30,8 @@ namespace API.Controllers
             _userRepository = userRepository;
             _mapper = mapper;
         }
+        
         [HttpGet]
-
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
