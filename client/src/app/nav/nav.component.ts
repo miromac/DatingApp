@@ -8,16 +8,18 @@ import { AccountService } from '../_services/account.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-
   model: any = {};
   //currentUser$: Observable<User>;
   //loggedIn: boolean;
 
-  constructor(public acountService: AccountService, private router: Router,
-     private toastr: ToastrService) { }
+  constructor(
+    public acountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     //this.getCurrentUser();
@@ -25,15 +27,15 @@ export class NavComponent implements OnInit {
   }
 
   login() {
-    this.acountService.login(this.model).subscribe(response => {
+    this.acountService.login(this.model).subscribe((response) => {
       //console.log(response);
       //this.loggedIn = true;
       this.router.navigateByUrl('/members');
-    })
+    });
     //console.log(this.model);
   }
 
-  logout(){
+  logout() {
     this.acountService.logout();
     this.router.navigateByUrl('/');
     //this.loggedIn = false;
@@ -46,6 +48,5 @@ export class NavComponent implements OnInit {
   //     console.log(error);
   //   })
   //}
-  // <ul class="navbar-nav mr-auto" *ngIf="loggedIn">
-
+  // <ul class="navbar-nav me-auto" *ngIf="loggedIn">
 }
